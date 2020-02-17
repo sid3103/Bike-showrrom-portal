@@ -1,0 +1,46 @@
+<% if purchased_products.present? %>
+
+  <% purchased_products.each do |ci|%>
+    <div class="gallery">
+      <a target="_blank" >
+        <%= bike_dashboard_img(ci.two_wheeler) %>
+      </a>
+
+      <div class="desc">
+        <strong>Title :</strong><br>
+          <%= ci.two_wheeler.title %>
+      </div>
+
+      <div class="desc">
+        <strong>Description :</strong><br>
+          <%= ci.two_wheeler.description %>
+      </div>
+
+      <div class="desc">
+        <strong>Specification :</strong><br>
+          <%= ci.two_wheeler.specification %>
+      </div>
+
+      <div class="desc">
+        <strong>Price :</strong><br>
+          <%= ci.two_wheeler.price %>
+      </div>
+
+      <%= link_to 'Remove', cart_path(ci), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
+    </div>
+  <% end %>       
+<% else %>
+  <div> Empty Cart...</div>
+<% end %>
+
+<!-- <script>
+  $(document).ready(function(){
+    $("#remove").on('click',function(){
+      $.ajax({
+        url: "/shared/purchased_products"
+      })
+    })
+  })
+</script>
+ -->
+

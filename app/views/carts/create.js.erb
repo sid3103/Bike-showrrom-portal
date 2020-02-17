@@ -1,0 +1,4 @@
+$(".my-cart").prepend("<div class='addtocartconfirmation'><span>"+"<%= @message %>"+"</span></div>"); 
+$(".cart-item-count").text("<%= current_user.try(:cart).try(:cart_items).try(:count) %>");
+$(".addtocartconfirmation").fadeOut(1000);
+$("#my_cart").html("<%= escape_javascript(render 'shared/purchased_products', purchased_products: @purchased_products) %>")

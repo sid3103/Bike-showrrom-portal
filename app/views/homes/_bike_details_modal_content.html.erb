@@ -1,0 +1,21 @@
+<% if @two_wheeler.present? %>
+  <div class="modal-header">
+    <h4 class="modal-title"><%= @two_wheeler.title %></h4>
+  </div>
+  <div class="modal-body">
+    <div class="desc">
+      <strong>Description : </strong><%= @two_wheeler.description %>
+    </div>
+
+    <div class="desc">
+      <strong>Specification : </strong><%= @two_wheeler.specification %>
+    </div>
+
+    <div class="desc">
+      <strong>Price : </strong><%= @two_wheeler.price %>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+<% end %>

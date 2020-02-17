@@ -1,0 +1,23 @@
+  <ul>
+  <li><a class="active"><%= link_to 'Home', root_path %></a></li>
+  <li><a><%= link_to 'New Bike', new_two_wheeler_path %></a></li>
+  <li><a><%= link_to('Logout', destroy_user_session_path, method: :delete) %></a></li>
+  <div>
+    <%= render 'shared/cart', purchased_products: @purchased_products %>
+  </div>  
+  <span class='float-right mr-30 mt-30 my-cart'>
+  	<img src='/assets/shopping-cart.png'  width="30" height="30">
+  	<span id = "p1"class="w3-badge cart-item-count" data-toggle="modal" data-target="#exampleModal" style="margin-left: -21px"><%= current_user.try(:cart).try(:cart_items).try(:count) %></span>
+  <span>
+  </ul>
+
+<script>
+$(document).ready(function(){
+  $("#p1").click(function(){
+ 		// document.location.href = "/carts/index"
+  });
+});
+</script>
+
+<!-- NAIGATION WINDOW -->
+

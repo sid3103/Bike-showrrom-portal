@@ -1,0 +1,35 @@
+<%= form_for @two_wheeler do |tw| %>
+	<div class="form-group">
+		<%= tw.label :title %>
+		<%= tw.text_field :title, placeholder: "Bike Name" ,class: 'form-control'%>
+	</div>
+
+	<div class="form-group">
+		<%= tw.label :description %>
+		<%= tw.text_area :description, placeholder: "Details",class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+		<%= tw.label :specification %>
+		<%= tw.text_area :specification, placeholder: "Specification of Bikes",class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+		<%= tw.label :price %>
+		<%= tw.number_field :price, placeholder: "Money",class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+    	<%= tw.label :image %>
+    	<%= tw.file_field :image, class: 'form-control' %>
+  	</div>
+
+	<div class="form-group">
+		<%= tw.submit 'Create'%>
+	</div>
+
+<% end %>
+
+
+
+
